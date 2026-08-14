@@ -2,7 +2,9 @@
 
 Рейтинг диспетчеров для TMS по грузоперевозкам США. Бонусы считаются с этого экрана, поэтому каждое спорное правило записано явно: в API, в тестах и в блоке «What did not count».
 
-Локальная демка (проверено): [http://127.0.0.1:3000](http://127.0.0.1:3000). Публичный URL — после `git push` + Vercel/Railway, см. конец файла.
+Локальная демка: [http://127.0.0.1:3000](http://127.0.0.1:3000).  
+Репозиторий: [https://github.com/sshell72dev/cargoetl](https://github.com/sshell72dev/cargoetl).  
+Vercel: API `cargoetl-api`, UI `cargoetl-board` (URLs после первого деплоя).
 
 ## Как запустить
 
