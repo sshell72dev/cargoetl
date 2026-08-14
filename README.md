@@ -123,7 +123,11 @@ Cursor Grok 4.6, один заход. Ей отдал: каркас FastAPI/Next
 
 ## Деплой
 
-`Dockerfile` в корне поднимает FastAPI. Frontend — Vercel из `frontend/`, переменные `API_URL` и `NEXT_PUBLIC_API_URL` на хост API. Публичную демку из этой сессии не выкатил: на машине нет залогиненного GitHub/Vercel CLI.
+- Репозиторий: https://github.com/sshell72dev/cargoetl
+- API: https://cargoetl-api.vercel.app/api/health
+- UI: https://cargoetl-board.vercel.app (после патча Next.js 15.4.8)
+
+`Dockerfile` в корне — запасной путь поднять FastAPI отдельно. Frontend на Vercel берёт `NEXT_PUBLIC_API_URL`.
 
 ## Полезные id в данных
 
