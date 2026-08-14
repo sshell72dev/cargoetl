@@ -125,7 +125,7 @@ Cursor Grok 4.6, один заход. Ей отдал: каркас FastAPI/Next
 
 - Репозиторий: https://github.com/sshell72dev/cargoetl
 - API: https://cargoetl-api.vercel.app/api/health
-- UI: https://cargoetl-board.vercel.app (после патча Next.js 15.4.8)
+- UI: https://cargoetl-board.vercel.app
 
 `Dockerfile` в корне — запасной путь поднять FastAPI отдельно. Frontend на Vercel берёт `NEXT_PUBLIC_API_URL`.
 
