@@ -34,11 +34,11 @@ def main() -> None:
         env=env,
     )
     time.sleep(0.8)
+    next_js = FRONTEND / "node_modules" / "next" / "dist" / "bin" / "next"
     web = subprocess.Popen(
-        ["npm", "run", "dev"],
+        ["node", str(next_js), "dev", "--port", "3000"],
         cwd=str(FRONTEND),
         env=env,
-        shell=os.name == "nt",
     )
     print("API  http://127.0.0.1:8000/api/health")
     print("UI   http://127.0.0.1:3000")
