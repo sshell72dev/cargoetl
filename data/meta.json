@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "companyTimezone": "America/Chicago",
+  "dispatchers": 26,
+  "loads": 1190,
+  "events": 4408,
+  "delivered": 992,
+  "cancelled": 110,
+  "plantedLoadIds": [
+    "L-CANCEL-01",
+    "L-CROSS-MONTH",
+    "L-HANDOFF-01",
+    "L-NEG-01",
+    "L-NEWHIRE-01",
+    "L-NO-CLOSER",
+    "L-TERMINATED-01",
+    "L-TIE-ADJUST",
+    "L-TZ-BOMB",
+    "L-ZERO-MARGIN"
+  ],
+  "forcedTie": [
+    "D-09",
+    "D-10"
+  ],
+  "window": {
+    "start": "2026-05-01T00:00:00+00:00",
+    "end": "2026-08-14T18:00:00+00:00"
+  }
+}
