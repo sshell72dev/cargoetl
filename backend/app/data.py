@@ -1,10 +1,22 @@
 from __future__ import annotations
 
 import json
+import os
 from functools import lru_cache
 from pathlib import Path
 
-DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data"
+
+def _resolve_data_dir() -> Path:
+    if os.environ.get("DATA_DIR"):
+        return Path(os.environ["DATA_DIR"])
+    here = Path(__file__).resolve()
+    for candidate in (here.parents[1] / "data", here.parents[2] / "data"):
+        if (candidate / "dispatchers.json").exists():
+            return candidate
+    return here.parents[2] / "data"
+
+
+DATA_DIR = _resolve_data_dir()
 
 
 def _read(name: str):

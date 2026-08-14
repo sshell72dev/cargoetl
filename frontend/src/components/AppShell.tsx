@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { API_BASE } from "@/lib/api";
 
 const NAV = [
   { href: "/", label: "Leaderboard" },
@@ -20,7 +21,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const [def, setDef] = useState("2026-07");
 
   useEffect(() => {
-    fetch("/api/periods")
+    fetch(`${API_BASE}/api/periods`)
       .then((r) => r.json())
       .then((data) => {
         setPeriods(data.periods);

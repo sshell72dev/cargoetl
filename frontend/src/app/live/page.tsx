@@ -14,7 +14,8 @@ export default function LivePage() {
     let es: EventSource | null = null;
     let cancelled = false;
 
-    fetch("/api/events?limit=80")
+    const apiHost = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+    fetch(`${apiHost}/api/events?limit=80`)
       .then((r) => r.json())
       .then((payload) => {
         if (cancelled) return;
@@ -26,8 +27,6 @@ export default function LivePage() {
       })
       .catch(() => setStatus("API unreachable"));
 
-    // Hit the API host directly. Next.js rewrites buffer SSE.
-    const apiHost = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
     es = new EventSource(`${apiHost}/api/live/stream`);
     es.addEventListener("load", (msg) => {
       const event = JSON.parse((msg as MessageEvent).data) as LiveEvent;
